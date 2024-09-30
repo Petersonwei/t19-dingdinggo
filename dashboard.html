@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Events Dashboard</title>
+    <link rel="stylesheet" href="styles/dashboard-styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-icon"></div>
+            <nav>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="calendar.html">Calendar</a>
+                <a href="map_V5.html">Map</a>
+                <a href="friends.html">Friends</a>
+            </nav>
+            <button class="btn-logout">Log Out</button>
+        </aside>
+        <main class="main-content">
+            <header>
+                <input type="search" placeholder="Search" class="search-bar">
+            </header>
+            <section class="my-events">
+                <h2>MY EVENTS</h2>
+                <div class="event-grid">
+                    <a class="event-card add-event" href="dragNdrop.html">+</a>
+                    <div class="event-card"><img src="event1.jpg" alt="Event 1"></div>
+                    <div class="event-card"><img src="event2.jpg" alt="Event 2"></div>
+                    <div class="event-card"><img src="event3.jpg" alt="Event 3"></div>
+                </div>
+            </section>
+            <section class="event-invitations">
+                <h2>EVENT INVITATIONS</h2>
+                <div class="event-grid">
+                    <div class="event-card"><img src="invitation1.jpg" alt="Invitation 1"></div>
+                    <div class="event-card"><img src="invitation2.jpg" alt="Invitation 2"></div>
+                    <div class="event-card new-invitation">
+                        <span class="new-badge">1 NEW</span>
+                        <img src="invitation3.jpg" alt="Invitation 3">
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

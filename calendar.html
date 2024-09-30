@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="styles/calendar.css">
+</head>
+<body>
+    <div class="header">
+        <a id="back-button" href="dashboard.html">Home</a>
+        <h1>Calendar</h1>
+    </div>
+    <label for="event-type-filter">Filter by event type:</label>
+    <select id="event-type-filter">
+        <option value="">All Types</option>
+    </select>
+
+    <div class="month-controls">
+        <button id="prev-month">&lt; Previous</button>
+        <span id="month-year"></span>
+        <button id="next-month">Next &gt;</button>
+    </div>
+
+    <div class="container">
+        <div id="event-list" class="event-list">
+        </div>
+        <div id="calendar" class="calendar">
+        </div>
+    </div>
+    <div id="status-bar" class="status-bar">
+    </div>
+    <div id="selected-event" class="selected-event">
+    </div>
+
+    <script src="script/calendar.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#back-button {
+    background-color: #ff7f50;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.event-list {
+    width: 30%;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    height: 600px;
+    overflow-y: auto;
+}
+
+.calendar {
+    width: 65%;
+    padding: 20px;
+}
+
+.month-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.day-cell {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    min-height: 80px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+.day-cell:hover {
+    background-color: #e0e0e0;
+}
+
+.event-item {
+    background-color: #f0f8ff;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.event-item h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.selected-event {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+}
+
+.month-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.month-controls button {
+    padding: 10px;
+    background-color: #e0f2f1;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.month-controls button:hover {
+    background-color: #ff7f50;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.month-controls span {
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.status-bar {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create New Event</title>
+    <link rel="stylesheet" href="styles/dragNdrop-styles.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <a class="back-button" href="dashboard.html">&lt;</a>
+            <h1>Create New Event Card</h1>
+            <button id="done-btn" class="done-button">Done</button>
+        </header>
+        <div class="content-area">
+            <div id="invitation"></div>
+            <div class="btn-group">
+                <button id="event-type-btn" class="btn">Event Type</button>
+                <button id="add-friends-btn" class="btn">Add Friends</button>
+                <button id="date-btn" class="btn">Date</button>
+            </div>
+        </div>
+    </div>
+    <div id="popup-container">
+        <div id="filters-popup" class="popup">
+            <div class="popup-content">
+                <div id="filters-container"></div>
+            </div>
+        </div>
+        <div id="friend-popup" class="popup">
+            <div class="popup-content">
+                <div id="friend-container"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script src="script/dragNdrop.js"></script>
+</body>
+</html>

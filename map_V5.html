@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brisbane Map with Event Filter</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="styles/map.css">
+    
+    <style>
+        #mapid { height: 500px; }
+        #filter-container { margin: 10px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a id="back-button" href="dashboard.html">Home</a>
+        <h1>Brisbane Map with Events (Filter by Distance and Type)</h1>
+    </div>
+    <div id="filter-container">
+        <select id="filter" onchange="filterEvents()">
+            <option value="all">All Events</option>
+            <option value="Music">Music</option>
+            <option value="Sports">Sports</option>
+            <option value="Art">Art</option>
+        </select>
+    
+        <input type="number" id="distanceFilter" placeholder="Enter distance in km" />
+        <button onclick="filterEvents()">Filter Events</button>
+    
+        <input type="text" id="searchBar" placeholder="Search for an event..." />
+        <button onclick="filterEvents()">Search</button>
+    </div>
+    
+
+    <div id="mapid"></div>
+
+    <script src="script/map.js"></script>
+
+</body>
+</html>

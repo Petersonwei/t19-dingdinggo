@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>HOMEPAGE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type=image/png href="Placeholder-Logo.png">
+        <link rel="stylesheet" href="styles/site_styles.css">
+        <link rel="stylesheet" href="styles/home_styles.css">
+    </head>
+    
+    <body>
+      <div class="flex-container">
+        <header class ="flex-home-header"> 
+          <div>
+            <a href="Homepage.html">
+              <img id="header-logo" src="assets/Placeholder-Logo.png" alt="Logo">
+            </a>
+          </div>
+          <div class="header-flex-container">
+            <form class="header-inputs" action="">
+              <input type="text" placeholder="Search Events">
+              <button id="searchbutton" type="submit"></button>
+            </form>
+          </div>
+          <div class=" header-flex-container location-dropdown">
+              <input list="location" placeholder ="Location" name="location" class="header-inputs">
+
+              <datalist id="location">
+                  <option value="Location 1"></option>
+              </datalist>
+          </div>
+          <div class="home-login-signup header-flex-container">
+              <a id="login-link" href="login.html">Log in</a>
+              <button id="SignUp-button" type="button" href="login.html">Sign Up</button>
+          </div>
+        </header>
+        <section class="grid-row"> 
+            <div class = "col-6">
+                <div id = "intro-flex">
+                    <h1>Brisbane's Best Events</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    In eget mauris quis lorem efficitur condimentum. 
+                    Donec consequat nisi eget massa posuere vehicula.
+                    </p>
+                    <button id="AboutUs-button" type="button">About Us</button>
+                    <button id="JoinUs-button" type="button">Join Us</button>
+                </div>
+            </div>
+            <div class="col-6">
+                <img id="image1-home" src="assets/Placeholder Image.png">
+            </div>
+        </section>
+        <section id="WhatsOn" class= "grid-row col-12">
+            <h1>Trending</h1>
+        </section>
+        <section> 
+          <div class="slideshow-container">
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 3</div>
+              <div class="image-container">
+                <img src="assets/Placeholder-slideshow.png" style="width:100%">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              </div>
+              <div class="text">
+                <h2>Yoga By The Lake</h2>
+                <p>Saturday 20th September 2024, 7am - 9am</p>
+                <p>Location: UQ Lakes</p>
+                <button id="JoinUs-button" type="button">Join Us</button>
+              </div>
+            </div>
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 3</div>
+              <div class="image-container">
+                <img src="assets/Placeholder-slideshow.png" style="width:100%">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              </div>
+              <div class="text">
+                <h2>Family Fun Picnic</h2>
+                <p>Saturday 4th November 2024, 7am - 9am</p>
+                <p>Location: New Farm Park</p>
+                <button id="JoinUs-button" type="button">Join Us</button>
+              </div>
+            </div>
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 3</div>
+              <div class="image-container">
+                <img src="assets/Placeholder-slideshow.png" style="width:100%">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              </div>
+              <div class="text">
+                <h2>City Bike Tour</h2>
+                <p>Sunday 21st October 2024, 7am - 9am</p>
+                <p>Location: City</p>
+                <button id="JoinUs-button" type="button">Join Us</button>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+
+        </section>
+        <section class="top-categories">
+          <h1>Explore Top Categories</h1>
+          <div class="thumbnails">
+              <div class="responsive">
+                  <div class="gallery">
+                      <a target="_blank" href="assets/Placeholder Image.png">
+                          <img src="assets/Placeholder Image.png" alt="Outdoor Trekking">
+                      </a>
+                      <p class="desc">Travel & Outdoors</p>
+                  </div>
+              </div>
+
+              <div class="responsive">
+                  <div class="gallery">
+                      <a target="_blank" href="assets/Placeholder Image.png">
+                          <img src="assets/Placeholder Image.png" alt="Woman doing yoga">
+                      </a>
+                      <p class="desc">Relaxing</p>
+                  </div>
+              </div>
+
+              <div class="responsive">
+                  <div class="gallery">
+                      <a target="_blank" href="assets/Placeholder Image.png">
+                          <img src="assets/Placeholder Image.png" alt="People Cycling">
+                      </a>
+                      <p class="desc">Sports & Fitness</p>
+                  </div>
+              </div>
+
+              <div class="responsive">
+                  <div class="gallery">
+                      <a target="_blank" href="assets/Placeholder Image.png">
+                          <img src="assets/Placeholder Image.png" alt="Person painting">
+                      </a>
+                      <p class="desc">Art & Culture</p>
+                  </div>
+              </div>
+
+          </div>
+        </section>
+        
+       <footer class="flex-footer">
+
+       </footer>
+      </div>
+    </body>
+  
+    <script src="script/site_interactions.js"></script>
+</html>
+
+
