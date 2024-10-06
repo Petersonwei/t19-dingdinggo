@@ -42,6 +42,10 @@
     margin: 10px;
 }
 
+.home-login-signup {
+    margin-left: auto;
+}
+
 /* responsive grid for .main-content */
 .grid-row{
     display: grid;
