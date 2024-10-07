@@ -106,8 +106,8 @@ button:hover {
     box-shadow: 2px 2px 10px lightgrey;
 }
 
-#JoinUs-button, #SignUp-button{
-    background-color: var(--mediumblue);
+#JoinUs-button {
+    background-color: #EB691E;
     font-weight: bold;
     color: white;
     margin: 10px;
@@ -410,6 +410,7 @@ p{
 h2{
   font-family: 'Roboto', sans-serif;
   font-size: 3vw;
+  color: var(--darknavy);
 }
 
 p{
