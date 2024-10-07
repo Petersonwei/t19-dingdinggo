@@ -46,6 +46,11 @@
     margin-left: auto;
 }
 
+#image1-home{
+    border-radius: 20px;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.2); /* Drop shadow */
+}
+
 /* responsive grid for .main-content */
 .grid-row{
     display: grid;
