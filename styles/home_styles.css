@@ -418,6 +418,13 @@ p{
   font-size: 16px;
 }
 
+h3{
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: var(--darknavy);
+  font-weight: 500;
+}
+
 button{
   font-family: 'Inter', sans-serif;
 }
