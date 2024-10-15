@@ -14,6 +14,37 @@ const buttons = document.querySelectorAll('.btn');
 const selectedTypes = new Set();
 const selectedFriends = new Set();
 
+// For the display
+const eventTypes = new Map([
+    ["Art", "url('media/stickers/Art.png')"],
+    ["Creative", "url('media/stickers/Creative.png')"],
+    ["Culture", "url('media/stickers/Culture.png')"],
+    ["Exhibitions", "url('media/stickers/Exhibitions.png')"],
+    ["Family events", "url('media/stickers/Family Events.png')"],
+    ["Featured", "url('media/stickers/Featured.png')"],
+    ["Festivals", "url('media/stickers/Festivals.png')"],
+    ["Films", "url('media/stickers/Films.png')"],
+    ["Fitness & well-being", "url('media/stickers/Fitness&Well being.png')"],
+    ["Food", "url('media/stickers/Food.png')"],
+    ["Free", "url('media/stickers/Free.png')"],
+    ["Green", "url('media/stickers/Green.png')"],
+    ["Markets", "url('media/stickers/Markets.png')"],
+    ["Music", "url('media/stickers/Music.png')"],
+    ["Performing arts", "url('media/stickers/Performing Arts.png')"],
+    ["Tours", "url('media/stickers/Tours.png')"],
+    ["Workshops", "url('media/stickers/Workshops.png')"]    
+]);
+
+function changeSticker(element) {
+    element.style.backgroundSize = 'contain';
+    element.style.backgroundRepeat = 'no-repeat';
+    element.style.backgroundPosition = 'center';
+    element.style.backgroundColor = '';
+    element.style.width = '200px'; 
+    element.style.height = '162px';
+    element.style.color = 'transparent';
+}
+
 function changeStyle(element) {
     element.style.backgroundColor = '#ff7f50';
     element.style.color = 'white';
@@ -21,9 +52,19 @@ function changeStyle(element) {
 }
 
 function revertStyle(element) {
+
     element.style.backgroundColor = '#e0f2f1';
     element.style.color = '#00796b';
     element.style.fontWeight = 500;
+
+    if (element.classList.contains('filter')) {
+        changeStyle(element);
+        element.style.backgroundPosition = '';
+        element.style.backgroundSize = 'cover';
+        element.style.width = '';
+        element.style.height = ''; 
+        element.style.backgroundColor = '';
+    }
 }
 
 openFiltersBtn.addEventListener("click", () => {
@@ -108,57 +149,27 @@ for (let i = 0; i < 10; i++) {
     friend.addEventListener("touchstart", startDragging);
 }
 
-function truncateText(text, maxLength = 20) {
-    const replacements = {
-        'Aboriginal and Torres Strait Islander': 'Aboriginal & Torres Strait',
-    };
-
-    if (text in replacements) {
-        return replacements[text];
-    }
-
-    if (text.length > maxLength) {
-        return text.slice(0, maxLength) + '...';
-    }
-
-    return text;
-}
-
 async function renderBrisbaneEvents() {
-    try {
-        const events = await getBrisbaneEvents();
-        filtersContainer.innerHTML = '';
 
-        if (events.length === 0) {
-            filtersContainer.innerHTML = '<p>No events found.</p>';
-            return;
-        }
+    Array.from(eventTypes.keys()).forEach((type, index) => {
+        const filter = document.createElement("div");
+        filter.className = `filter ${type.split(' ')[0]}`;
+        filter.textContent = type;
+        filtersContainer.appendChild(filter);
 
-        const eventTypes = new Set();
+        const row = Math.floor(index / 5);
+        const col = index % 5;
+        filter.style.left = `${col * 120}px`;
+        filter.style.top = `${row * 70}px`;
 
-        events.forEach(event => {
-            if (event.event_type) {
-                event.event_type.split(',').forEach(type => eventTypes.add(type.trim()));
-            }
-        });
+        changeStyle(filter);
+        filter.style.backgroundImage = eventTypes.get(type);
+        filter.style.webkitTextStroke = '0.2px black';
+        filter.style.textShadow = '2px 2px 4px rgba(0, 0, 0, 0.9)';
 
-        Array.from(eventTypes).forEach((type, index) => {
-            const filter = document.createElement("div");
-            filter.className = `filter ${type.split(' ')[0]}`;
-            filter.textContent = truncateText(type);
-            filtersContainer.appendChild(filter);
-
-            const row = Math.floor(index / 5);
-            const col = index % 5;
-            filter.style.left = `${col * 120}px`;
-            filter.style.top = `${row * 70}px`;
-
-            filter.addEventListener("mousedown", startDragging);
-            filter.addEventListener("touchstart", startDragging);
-        });
-    } catch (error) {
-        filtersContainer.innerHTML = '<p>Error loading events. Please try again later.</p>';
-    }
+        filter.addEventListener("mousedown", startDragging);
+        filter.addEventListener("touchstart", startDragging);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -206,9 +217,16 @@ function startDragging(e) {
             elementRect.top < targetRect.bottom &&
             elementRect.bottom > targetRect.top
         ) {
-            element.style.backgroundColor = 'blue';
+            
+            if (element.classList.contains('filter')) {
+                changeSticker(element);
+            } else {
+                element.style.backgroundColor = 'blue';
+                element.style.backgroundImage = '';
+            }
+
         } else {
-            changeStyle(element);
+            revertStyle(element);
         }
     }
 
@@ -229,7 +247,14 @@ function startDragging(e) {
             elementRect.top < targetRect.bottom &&
             elementRect.bottom > targetRect.top
         ) {
-            element.style.backgroundColor = 'blue';
+
+            if (element.classList.contains('filter')) {
+                changeSticker(element);
+            } else {
+                element.style.backgroundColor = 'blue';
+                element.style.backgroundImage = '';
+            }
+
             if (!element.classList.contains('friend')) {
                 selectedTypes.add(element.textContent);
             } else {
