@@ -7,17 +7,19 @@
     <link rel="stylesheet" href="styles/invitation.css">
 </head>
 <body>
-    <div id="container">
-        <div class="header">
-            <h1>Your Invitation is Ready!</h1>
-            <a class="add-to-calendar" href="calendar.html">Add to Calendar</a>
-        </div>
-        <img class="img"></img>
-        <div id="invitation">
+    <div class="header">
+        <h1>Your Invitation is Ready!</h1>
+        <button id="add-to-calendar">Add to Calendar</button>
+    </div>
+    <div id="invitation">
+        <div id="event" class="img"></div>
+        <div id="invitation-info">
             <div class="event-title"></div>
             <span class="event-details"></span>
         </div>
+        <div id="filter" class="img"></div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
     <script src="script/invitation.js"></script>
 </body>
 </html>

@@ -1,14 +1,14 @@
-#invitation {
-    padding: 20px;
-    height: 200px;
+#filter {
+    height: 250px;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
     margin: 0;
 }
@@ -18,12 +18,11 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     overflow: hidden;
-    width: 660px;
 }
 
 .header {
-    background-color: #f8f8f8;
-    padding: 20px;
+    padding: 20px 0px;
+    width: 660px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,7 +33,7 @@ body {
     font-size: 24px;
 }
 
-.add-to-calendar {
+#add-to-calendar {
     background-color: #ff7f50;
     color: white;
     border: none;
@@ -44,7 +43,7 @@ body {
 }
 
 .img {
-    width: 100%;
+    width: 660px;
     height: 200px;
     background-size: cover;
     background-position: center;
@@ -54,12 +53,4 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
-}
-
-.event-details {
-    margin-bottom: 15px;
-}
-
-.event-details p {
-    margin: 5px 0;
 }

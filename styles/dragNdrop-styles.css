@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: sans-serif;
     color: #333;
 }
 
@@ -125,8 +125,6 @@ header h1 {
     position: absolute;
     width: 100px;
     height: 50px;
-    background-color: #e0f2f1;
-    color: #00796b;
     border-radius: 5px;
     cursor: move;
     user-select: none;
@@ -135,6 +133,19 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.friend {
+    background-color: #e0f2f1;
+    color: #00796b;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .filter.dragging, .friend.dragging {

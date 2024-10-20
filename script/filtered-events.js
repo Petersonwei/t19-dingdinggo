@@ -1,8 +1,22 @@
 const apiUrl = 'https://data.brisbane.qld.gov.au/api/explore/v2.1/catalog/datasets/brisbane-city-council-events/records?order_by=start_datetime&limit=100';
 const selectedTypes = JSON.parse(localStorage.getItem('selectedTypes')) || [];
 const eventTypeReplacements = { 'Aboriginal and Torres Strait Islander': 'Aboriginal & Torres Strait' };
-const inviteCard = localStorage.getItem('inviteCard');
-console.log(inviteCard);
+const inviteFilters = localStorage.getItem('inviteFilters');
+const selectedDate = localStorage.getItem('selectedDate');
+
+function parseSelectedDate(dateString) {
+  if (!dateString) return null;
+  const [day, month, year] = dateString.split(' / ').map(Number);
+  return new Date(year, month - 1, day);
+}
+
+function isDateInRange(selectedDate, startDate, endDate) {
+  if (!selectedDate) return true;
+  const selected = parseSelectedDate(selectedDate);
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  return (selected >= start && selected <= end) || (selected.getDate() == start.getDate() && selected.getMonth() == start.getMonth());
+}
 
 async function getFilteredEvents() {
     try {
@@ -13,7 +27,9 @@ async function getFilteredEvents() {
             const filteredEvents = data.results.filter(event => {
                 const eventTypes = event.event_type ? event.event_type.split(',').map(type => type.trim()) : [];
                 const correctedEventTypes = eventTypes.map(type => eventTypeReplacements[type] || type);
-                return selectedTypes.every(type => correctedEventTypes.includes(type));
+                const typeMatch = selectedTypes.every(type => correctedEventTypes.includes(type));
+                const dateMatch = isDateInRange(selectedDate, event.start_datetime, event.end_datetime);
+                return typeMatch && dateMatch;
             });
             return filteredEvents;
         } else {
